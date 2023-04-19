@@ -7,18 +7,16 @@ import {
   NavLink,
   LogoContainer,
 } from "./Navigation.jsx";
-import { useContext } from "react";
-import { userContext } from "../../context/UserContext/UserContext";
 import { signOutUser } from "../../utils/firebase/firebase";
 import CardIcon from "../../components/CardIcon/CardIcon";
 import CardDropdown from "../../components/CardDropdown/CardDropdown";
-import { CartContext } from "../../context/CartContext/CartContext";
+import { selectIsCartOpen } from "../../store/cart/cartSelector";
 import { useSelector } from "react-redux";
 import { selectCurrentUser } from "../../store/user/userSelector";
 const Navigation = () => {
   // const { currentUser } = useContext(userContext);
   const currentUser = useSelector(selectCurrentUser);
-  const { isCartOpen } = useContext(CartContext);
+  const isCartOpen = useSelector(selectIsCartOpen);
 
   return (
     <>
