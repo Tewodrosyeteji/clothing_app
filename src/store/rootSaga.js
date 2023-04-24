@@ -1,6 +1,7 @@
-import {all,call} from "redux-saga/effects"
-import { categoriesSaga } from "./categories/categoriesSaga"
+import { all, call } from "redux-saga/effects";
+import { categoriesSaga } from "./categories/categoriesSaga";
+import { userSaga } from "./user/userSage";
 
-export function* rootSaga(){
-   yield all([call(categoriesSaga)]);
+export function* rootSaga() {
+  yield all([call(categoriesSaga), call(userSaga)]);
 }
