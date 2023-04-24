@@ -12,16 +12,19 @@ import {
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { setCurrentUser } from "./store/user/userAction";
+import { getCurrentUser } from "./utils/firebase/firebase";
 const App = () => {
   const dispatch = useDispatch();
   useEffect(() => {
-    const unsubscrib = onAuthStateChangedListner((user) => {
-      if (user) {
-        createUserDocumentFromAuth(user);
-      }
-      dispatch(setCurrentUser(user));
-    });
-    return unsubscrib;
+
+    getCurrentUser().then(user=>console.log(user));
+    // const unsubscrib = onAuthStateChangedListner((user) => {
+    //   if (user) {
+    //     createUserDocumentFromAuth(user);
+    //   }
+    //   dispatch(setCurrentUser(user));
+    // });
+    // return unsubscrib;
   }, []);
   return (
     <Routes>

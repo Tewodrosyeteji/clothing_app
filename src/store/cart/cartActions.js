@@ -37,6 +37,8 @@ const clearItem = (cartItems, itemToClear) => {
   return cartItems.filter((cartItem) => cartItem.id !== itemToClear.id);
 };
 
+
+
 export const addProductToCart = (cartItems, productToAdd) => {
   const newCartItems = addToCart(cartItems, productToAdd);
   return createAction(CART_ACTION_TYPE.ADD_PRODUCT_TO_CART, newCartItems);

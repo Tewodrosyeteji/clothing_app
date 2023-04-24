@@ -11,7 +11,7 @@ export const cartReducer = (state = cartInitialState, action = {}) => {
         ...state,
         isCartOpen: payload,
       };
-    case CART_ACTION_TYPE.SET_CART_ITEMS:
+    case CART_ACTION_TYPE.ADD_PRODUCT_TO_CART:
       return {
         ...state,
         cartItems: payload,
