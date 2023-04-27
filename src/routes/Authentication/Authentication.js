@@ -1,6 +1,6 @@
 import React from "react";
-import SignInForm from "../../components/SignInForm/SignInForm";
-import SignUpForm from "../../components/SignUpForm/SignUpForm";
+import SignInForm from "../../components/SignInForm/SignInForm.component";
+import SignUpForm from "../../components/SignUpForm/SignUpForm.component";
 import "./Authentication.scss";
 const Authentication = () => {
   return (

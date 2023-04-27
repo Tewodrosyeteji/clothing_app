@@ -1,15 +1,15 @@
 import { Routes, Route } from "react-router-dom";
 import "./Shop.scss";
 import CatagoresPreview from "../CatagoriesPreview/CatagoriesPreview";
-import Catagory from "../Catagory/Catagory";
+import Catagory from "../Catagory/Catagory.component";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { fetchCategoryStart } from "../../store/categories/categoriesAction";
 const Shop = () => {
   const dispatch = useDispatch();
-  
+
   useEffect(() => {
-      dispatch(fetchCategoryStart());
+    dispatch(fetchCategoryStart());
   }, []);
   return (
     <Routes>
