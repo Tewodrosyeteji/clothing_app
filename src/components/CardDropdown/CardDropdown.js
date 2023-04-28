@@ -1,4 +1,4 @@
-import React from "react";
+import { useCallback } from "react";
 import Button from "../Button/Button.component";
 import {
   CartDropDownContainer,
@@ -12,9 +12,8 @@ import { useNavigate } from "react-router-dom";
 const CardDropdown = () => {
   // const { cartItems } = useContext(CartContext);
   const cartItems = useSelector(selectCartItems);
-  console.log(cartItems);
   const navigate = useNavigate();
-  const goToCheckout = () => navigate("/checkout");
+  const goToCheckout = useCallback(() => navigate("/checkout"), []);
   return (
     <CartDropDownContainer>
       <CartItems>

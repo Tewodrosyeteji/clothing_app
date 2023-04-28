@@ -1,4 +1,4 @@
-import React from "react";
+import { memo } from "react";
 import { useSelector } from "react-redux";
 import {
   selectCartItems,
@@ -7,7 +7,7 @@ import {
 import "./Checkout.scss";
 import CheckoutItem from "../../components/CheckoutItem/CheckoutItem";
 
-const Checkout = () => {
+const Checkout = memo(() => {
   const cartItems = useSelector(selectCartItems);
   const cartTotal = useSelector(selectCartTotal);
   return (
@@ -35,6 +35,6 @@ const Checkout = () => {
       <span className="total">Total:{cartTotal}</span>
     </div>
   );
-};
+});
 
 export default Checkout;
